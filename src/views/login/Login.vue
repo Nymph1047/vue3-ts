@@ -1,18 +1,12 @@
 <template>
   <div class="login">
     <LoginPanel></LoginPanel>
-    <el-icon :size="50">
-      <Edit/>
-    </el-icon>
   </div>
 </template>
 
 <script setup lang="ts">
 import LoginPanel from './c-cpns/login-panel.vue'
 
-function desdhaksf(num){
-  return num
-}
 </script>
 
 <style lang="less" scoped>

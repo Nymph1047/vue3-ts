@@ -6,8 +6,11 @@ import router from "@/router";
 import pinia from "@/store";
 import registerIcons from "@/global/register-icons";
 
+// 针对elmessage和elloading等组件引入样式
+// import 'element-plus/theme-chalk/el-message.css'
+
 // import ElementPlus from 'element-plus'
-// import 'element-plus/dist/index.css'
+import 'element-plus/dist/index.css'
 
 // createApp(App).use(router).mount('#app')
 

@@ -5,15 +5,19 @@
 // 2.代码逻辑判断, 判断当前环境
 // vite默认提供的环境变量
 // console.log(import.meta.env.MODE)
-console.log(import.meta.env.DEV) // 是否开发环境
-console.log(import.meta.env.PROD) // 是否生产环境
-console.log(import.meta.env.SSR) // 是否是服务器端渲染(server side render)
+// console.log(import.meta.env.DEV) // 是否开发环境
+// console.log(import.meta.env.PROD) // 是否生产环境
+// console.log(import.meta.env.SSR) // 是否是服务器端渲染(server side render)
 
 let BASE_URL = ''
 if (import.meta.env.PROD) {
   BASE_URL = 'http://codercba.prod:8000'
 } else {
-  BASE_URL = 'http://120.24.160.246:7003'
+  // http://120.24.160.246:7003
+  // 'http://152.136.185.210:5000'
+  // http://coderwhy.org/test
+  // http://codercba.com:5000
+  BASE_URL = 'http://codercba.com:5000'
 }
 
 console.log(BASE_URL)
