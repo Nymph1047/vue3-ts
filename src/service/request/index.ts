@@ -15,7 +15,7 @@ interface HYRequestConfig<T = AxiosResponse> extends AxiosRequestConfig {
 class HYRequest {
   instance: AxiosInstance
 
-  constructor(config: HYRequestConfig) {
+  constructor(config: any) {
     this.instance = axios.create(config)
 
     // 全局的拦截器
@@ -50,6 +50,7 @@ class HYRequest {
 
   request<T = any>(config: HYRequestConfig<T>) {
     if (config.interceptors?.requestInterceptor) {
+        console.log(config)
       config = config.interceptors.requestInterceptor(config)
     }
 
