@@ -34,6 +34,9 @@ const useLoginStore = defineStore('login', {
             // 根据角色请求用户的权限
             const userMenuResult = await getRoleMenus(this.userInfo.role.id)
             this.userMenus = userMenuResult.data
+            // 缓存用户信息 和菜单到本地
+            localCache.setCache(userInfo, userInfo.data)
+            localCache.setCache(userMenuResult, userMenuResult.data)
 
             router.push('/main')
         }

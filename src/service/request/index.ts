@@ -50,7 +50,6 @@ class HYRequest {
 
   request<T = any>(config: HYRequestConfig<T>) {
     if (config.interceptors?.requestInterceptor) {
-        console.log(config)
       config = config.interceptors.requestInterceptor(config)
     }
 
@@ -77,7 +76,6 @@ class HYRequest {
   }
 
   post<T = any>(config: HYRequestConfig<T>) {
-      console.log(config)
     return this.request<T>({ ...config, method: 'POST' })
   }
 

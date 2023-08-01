@@ -1,6 +1,6 @@
 <template>
   <div class="login-panel">
-    <h1 class="title">小徐后台管理系统</h1>
+    <h1 class="title">littlexu后台管理系统</h1>
     <el-tabs type="border-card" stretch  v-model="activeName" >
 <!--      账号登录-->
       <el-tab-pane label="帐号登录" name="account">
