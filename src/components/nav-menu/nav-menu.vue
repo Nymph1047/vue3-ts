@@ -21,7 +21,8 @@
             <span >{{ item.name }}</span>
           </template>
           <template v-for="subitem in item.children" :key="subitem.id">
-            <el-menu-item :index="subitem.id + ''">
+            <el-menu-item :index="subitem.id + ''"
+                          @click="handleItemClick(subitem)">
               {{ subitem.name }}
             </el-menu-item>
           </template>
@@ -32,8 +33,10 @@
 </template>
 
 <script setup lang="ts">
+// import {ref} from "vue";
 import useLoginStore from "@/store/login/login";
-
+import { useRouter } from 'vue-router'
+// import { mapPathToMenu } from '@/utils/map-menu'
 // 0.定义数据
 defineProps({
   isFold: {
@@ -44,6 +47,16 @@ defineProps({
 // 获取菜单的数据
 const loginStore = useLoginStore()
 const useMenus = loginStore.userMenus
+
+// const route = useRoute()
+// const currentMenu = mapPathToMenu(useMenus, route.path)
+// const defaultValue = ref<string>(currentMenu.id + '')
+
+
+const router = useRouter()
+function handleItemClick(item: any) {
+  router.push(item.url)
+}
 </script>
 
 <style lang="less" scoped>
